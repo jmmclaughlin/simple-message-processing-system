@@ -29,14 +29,12 @@ public class App
 		while (!closeApp) {
 			
 			String input = scanner.nextLine();
-			System.out.println("'" + input + "'");
 
 			switch (input) {
 			case "1":
 				
 				System.out.println("Input message of Type 1 in the format 'product_type:price(p)' e.g Apple:10 :");
 				String saleMessage = scanner.nextLine();
-				System.out.println("'" + saleMessage + "'");
 				Message message = MessageFactory.create(saleMessage, MessageType.TYPE_1);
 				messageHandler.processMessage(message);
 				break;
