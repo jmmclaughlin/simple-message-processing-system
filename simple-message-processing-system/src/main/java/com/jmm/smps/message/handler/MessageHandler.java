@@ -63,7 +63,7 @@ public class MessageHandler extends Observable {
 			System.out.println(ReportGenerator.generateSalesReport(saleMessages));			
 		}
 		
-		if (getMessagesReceivedCount() == 3) {
+		if (getMessagesReceivedCount() == 50) {
 			
 			System.out.println("System paused, 50 messages received, new messages no longer being accepted!");
 			setPaused(true);

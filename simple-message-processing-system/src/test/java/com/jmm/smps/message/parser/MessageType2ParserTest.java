@@ -1,4 +1,4 @@
-package com.jmm.smps.parser;
+package com.jmm.smps.message.parser;
 
 import java.util.Map;
 
