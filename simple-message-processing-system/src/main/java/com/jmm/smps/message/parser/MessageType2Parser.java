@@ -6,7 +6,7 @@ import java.util.StringTokenizer;
 
 import com.jmm.smps.message.MessageDataKeys;
 
-public class MessageType1Parser implements MessageParser {
+public class MessageType2Parser implements MessageParser {
 	
 	@Override
 	public Map<String, Object> parse(String srcMessage) {
@@ -16,10 +16,12 @@ public class MessageType1Parser implements MessageParser {
 			StringTokenizer tokenizer = getTokenizer(srcMessage);
 			String productType = tokenizer.nextToken();
 			Long productPrice = Long.valueOf(tokenizer.nextToken());
+			Long occurrences = Long.valueOf(tokenizer.nextToken());
 
 			Map<String, Object> dataMap = new HashMap<String, Object>();
 			dataMap.put(MessageDataKeys.PRODUCT_TYPE.name(), productType.toUpperCase());
 			dataMap.put(MessageDataKeys.PRODUCT_PRICE.name(), productPrice);
+			dataMap.put(MessageDataKeys.OCCURRENCES.name(), occurrences);
 
 			return dataMap;
 		}
