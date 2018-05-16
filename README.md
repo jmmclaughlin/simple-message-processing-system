@@ -1,6 +1,6 @@
 # simple-message-processing-system
 
-Run as a standalone Java application.
+This is a Maven project and is run as a standalone Java application.
 
 User instructions and output displayed in console(System.out)
 
