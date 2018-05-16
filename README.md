@@ -10,11 +10,14 @@ User instructions and output displayed in console(System.out)
     
 e.g
 
-for message type 1 an example message is apple:10 i.e <product_type>:<product_price>
+for message type 1 an example message is apple:10
+i.e <product_type>:<product_price>
 	
-for message type 2 an example message is apple:10:5 i.e <product_type>:<product_price>:<occurrences>
+for message type 2 an example message is apple:10:5
+i.e <product_type>:<product_price>:<occurrences>
 
-for message type 3 and example message is apple:10:+:2 i.e <product_type>:<product_price>:<adjustment_operator>:<adjustment_amount>
+for message type 3 and example message is apple:10:+:2
+i.e <product_type>:<product_price>:<adjustment_operator>:<adjustment_amount>
     
 4) Hit <return> to submit the message.
 5) After 10 messages have been submitted and processed then a report should be displayed in the console(System.out) showing the total number of sales and total sales value for each product type. The user can then continue to submit further sale messages.
