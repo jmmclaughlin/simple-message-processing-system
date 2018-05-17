@@ -15,12 +15,15 @@ import com.jmm.smps.message.MessageType3;
 
 import junit.framework.TestCase;
 
-public class ReportGeneratorTest extends TestCase {
+public class SystemOutReportGeneratorTest extends TestCase {
 
+	ReportGenerator reportGenerator;
 	Map<String, List<Message>> salesData;
 	
 	@Before
 	protected void setUp() throws Exception {
+		
+		reportGenerator = new SystemOutReportGenerator();
 		
 		salesData = new HashMap<>();
 		
@@ -96,7 +99,7 @@ public class ReportGeneratorTest extends TestCase {
 				"BANANA              | 3                   | £0.45               \n" + 
 				"ORANGE              | 3                   | £0.30               \n";
 		
-		String generatedReport = ReportGenerator.generateSalesReport(salesData);
+		String generatedReport = reportGenerator.generateSalesReport(salesData);
 		assertEquals(expectedReport, generatedReport );
 	}
 	
@@ -132,7 +135,7 @@ public class ReportGeneratorTest extends TestCase {
 				"BANANA              | +5.0p\n" + 
 				"BANANA              | -10.0p\n";
 		
-		String generatedReport = ReportGenerator.generateAdjustmentsReport(salesData);
+		String generatedReport = reportGenerator.generateAdjustmentsReport(salesData);
 		assertEquals(expectedReport, generatedReport);
 	}
 

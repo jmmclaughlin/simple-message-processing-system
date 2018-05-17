@@ -6,6 +6,7 @@ import com.jmm.smps.message.Message;
 import com.jmm.smps.message.factory.MessageFactory;
 import com.jmm.smps.message.handler.MessageHandler;
 import com.jmm.smps.message.type.MessageType;
+import com.jmm.smps.report.SystemOutReportGenerator;
 
 
 public class App 
@@ -15,7 +16,7 @@ public class App
     public static void main( String[] args )
     {
         boolean closeApp = false;
-        MessageHandler messageHandler = new MessageHandler();
+        MessageHandler messageHandler = new MessageHandler(new SystemOutReportGenerator());
     	Scanner scanner = new Scanner(System.in);
     	
     	System.out.println("Simple Message Processing System");
