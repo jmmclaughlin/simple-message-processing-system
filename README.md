@@ -4,7 +4,7 @@ This is a Maven project and is run as a standalone Java application.
 
 To build the jar file run the following command:
 
-mvn clean install
+mvn package
 
 To run the program run the following command from within the project folder:
 
