@@ -8,7 +8,7 @@ mvn package
 
 To run the program run the following command from within the project folder:
 
-java -cp target\simple-message-processing-system-0.0.1-SNAPSHOT.jar com.jmm.smps.APP
+java -cp target\simple-message-processing-system-0.0.1-SNAPSHOT.jar com.jmm.smps.App
 
 
 User instructions and output displayed in console(System.out)
