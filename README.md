@@ -2,6 +2,15 @@
 
 This is a Maven project and is run as a standalone Java application.
 
+To build the jar file run the following command:
+
+mvn clean install
+
+To run the program run the following command from within the project folder:
+
+java -cp target\simple-message-processing-system-0.0.1-SNAPSHOT.jar com.jmm.smps.APP
+
+
 User instructions and output displayed in console(System.out)
 
 1) First the messaging system prompts the user to input the type of message to send. Input either 1, 2, or 3. Then hit <return>.
