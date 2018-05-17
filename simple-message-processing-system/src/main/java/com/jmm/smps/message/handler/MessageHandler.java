@@ -18,6 +18,12 @@ public class MessageHandler extends Observable {
 	private String productTypeToAdjust = null;
 	private String adjustmentOperator = null;
 	private Long adjustmentAmount = null;
+	
+	private ReportGenerator reportGenerator;
+	
+	public MessageHandler(ReportGenerator reportGenerator) {
+		this.reportGenerator = reportGenerator;
+	}
 
 	public boolean isPaused() {
 		return isPaused;
@@ -60,14 +66,14 @@ public class MessageHandler extends Observable {
 	
 		if (getMessagesReceivedCount() % 10 == 0) {
 
-			System.out.println(ReportGenerator.generateSalesReport(saleMessages));			
+			System.out.println(reportGenerator.generateSalesReport(saleMessages));			
 		}
 		
 		if (getMessagesReceivedCount() == 50) {
 			
 			System.out.println("System paused, 50 messages received, new messages no longer being accepted!");
 			setPaused(true);
-			System.out.println(ReportGenerator.generateAdjustmentsReport(saleMessages));
+			System.out.println(reportGenerator.generateAdjustmentsReport(saleMessages));
 		}
 	}
 	

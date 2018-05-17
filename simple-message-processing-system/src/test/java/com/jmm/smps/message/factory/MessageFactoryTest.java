@@ -13,6 +13,12 @@ import junit.framework.TestCase;
 public class MessageFactoryTest extends TestCase {
 	
 	MessageFactory factory;
+	
+	public static final String EXPECTED_PRODUCT_TYPE = "APPLE";
+	public static final long EXPECTED_PRODUCT_PRICE = 10L;
+	public static final long EXPECTED_OCCURRENCES = 5L;
+	public static final String EXPECTED_ADJUSTMENT_OPERATOR = "+";
+	public static final long EXPECTED_ADJUSTMENT_AMOUNT = 2L;
 
 	@Override
 	protected void setUp() {
@@ -27,6 +33,8 @@ public class MessageFactoryTest extends TestCase {
 		
 		assertNotNull(message);
 		assertTrue(message instanceof MessageType1);
+		assertEquals(EXPECTED_PRODUCT_TYPE, message.getProductType());
+		assertEquals(EXPECTED_PRODUCT_PRICE, message.getProductPrice().longValue());
 	}
 	
 	@Test
@@ -38,6 +46,9 @@ public class MessageFactoryTest extends TestCase {
 		
 		assertNotNull(message);
 		assertTrue(message instanceof MessageType2);
+		assertEquals(EXPECTED_PRODUCT_TYPE, message.getProductType());
+		assertEquals(EXPECTED_PRODUCT_PRICE, message.getProductPrice().longValue());
+		assertEquals(EXPECTED_OCCURRENCES, ((MessageType2)message).getOccurences().longValue());
 	}
 
 	@Test
@@ -49,5 +60,9 @@ public class MessageFactoryTest extends TestCase {
 		
 		assertNotNull(message);
 		assertTrue(message instanceof MessageType3);
+		assertEquals(EXPECTED_PRODUCT_TYPE, message.getProductType());
+		assertEquals(EXPECTED_PRODUCT_PRICE, message.getProductPrice().longValue());
+		assertEquals(EXPECTED_ADJUSTMENT_OPERATOR, ((MessageType3)message).getAdjustmentOperator());
+		assertEquals(EXPECTED_ADJUSTMENT_AMOUNT, ((MessageType3)message).getAdjustmentAmount().longValue());
 	}
 }
